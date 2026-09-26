@@ -28,10 +28,46 @@ document.addEventListener('DOMContentLoaded', () => {
         .photo.p4 { background-image: url("${window.location.pathname.includes('/tr/') ? '../' : ''}images/04-quality-shipment.jpg") !important; }
         .network-photo, .map { background-image: url("${window.location.pathname.includes('/tr/') ? '../' : ''}images/05-global-world-map.jpg") !important; }
         .packing-image { background-image: url("${window.location.pathname.includes('/tr/') ? '../' : ''}images/06-container-ship.jpg") !important; }
-        .industry-grid article,
-        .closing:before { background-image: url("${window.location.pathname.includes('/tr/') ? '../' : ''}images/07-industrial-experience.jpg") !important; }
+
+        /* Industries: keep cards clean until dedicated sector photos are added. */
+        .industry-grid article {
+            background-image: none !important;
+            background-color: #1a2225 !important;
+        }
+
+        /* Logistics destination labels: readable on the light section. */
+        .logistics-list div {
+            color: #101517 !important;
+            background: #edf1ef !important;
+            border-color: #cbd3d1 !important;
+        }
+
+        /* Packaging heading: keep the first phrase together. */
+        .pack h2 .pack-line {
+            white-space: nowrap;
+            color: inherit;
+        }
+
+        /* Packaging image stays below the text. */
+        .pack-grid {
+            display: flex !important;
+            flex-direction: column !important;
+            align-items: stretch !important;
+        }
+        .pack-copy { width: 100% !important; }
+        .packing-image { order: 2; }
+
+        @media (max-width: 640px) {
+            .pack h2 .pack-line { white-space: normal; }
+        }
     `;
     document.head.appendChild(imageStyle);
+
+    /* Keep the packaging headline as two intentional lines. */
+    const packHeading = document.querySelector('.pack h2');
+    if (packHeading) {
+        packHeading.innerHTML = '<span class="pack-line">Production doesn\'t end</span><br><span>at the factory gate.</span>';
+    }
 
     const header = document.querySelector('.site-nav');
 
