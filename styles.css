@@ -174,7 +174,7 @@ a { text-decoration:none; color:inherit }
 .quality-cards b { font:700 17px Manrope; display:block }
 .quality-cards span { font-size:10px; color:#6d777c; display:block; margin-top:8px }
 .network { display:grid; grid-template-columns:1.05fr .95fr; background:#e0e5e3 }
-.network-photo { min-height:650px; background:linear-gradient(90deg,transparent 55%,#e0e5e3 100%),url('https://images.unsplash.com/photo-1574920162043-b872873f19c8?auto=format&fit=crop&w=1500&q=85') center/cover }
+.network-photo { min-height:650px; background:linear-gradient(90deg,transparent 55%,#e0e5e3 100%),url('https://images.pexels.com/photos/1311159/pexels-photo-1311159.jpeg?auto=compress&cs=tinysrgb&w=1800') center/cover }
 .network-copy { padding:100px 9vw 90px 60px }
 .network-copy ol { list-style:none; margin:35px 0 0; padding:0; border-top:1px solid #c8cece }
 .network-copy li { padding:15px 0; border-bottom:1px solid #c8cece; display:grid; grid-template-columns:1fr 1fr; gap:20px; font-size:11px }
