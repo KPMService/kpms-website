@@ -1,0 +1,155 @@
+/* KOLER — CINEMATIC INDUSTRIAL THEME */
+:root {
+  --ink:#080b0c;
+  --paper:#0b0f10;
+  --white:#f4f6f5;
+  --muted:#a5afb2;
+  --line:#293133;
+  --lime:#c9ff3d;
+  --orange:#ff7448;
+  --steel:#69767b;
+}
+
+body {
+  background:#0b0f10;
+  color:var(--white);
+}
+
+.site-nav {
+  background:rgba(8,11,12,.78);
+  border-bottom:1px solid rgba(255,255,255,.09);
+  color:#eef2f1;
+}
+
+.site-nav nav { color:#c7ced0; }
+.logo>span { background:var(--lime); color:#080b0c; }
+.logo small { color:#8f9a9e; }
+.nav-btn { background:var(--lime); color:#080b0c; }
+
+.language-switcher {
+  margin-left:24px;
+  margin-right:0;
+  border:1px solid rgba(255,255,255,.16);
+  background:rgba(5,8,9,.72);
+}
+
+.lang-btn { color:#b8c1c4; }
+.lang-btn:hover { background:#202729; color:#fff; }
+.lang-btn.active { background:var(--lime); color:#080b0c; }
+
+/* Hero: cinematic, premium, industrial — no grid/game look */
+.hero {
+  min-height:calc(100vh - 78px);
+  background:#070a0b;
+}
+
+.hero-media {
+  background-image:url("images/hero-industrial.jpg");
+  background-size:cover;
+  background-position:center center;
+  filter:saturate(.72) contrast(1.18) brightness(.72);
+  transform:scale(1.015);
+}
+
+.hero-tint {
+  background:
+    linear-gradient(90deg,rgba(4,7,8,.97) 0%,rgba(4,7,8,.84) 34%,rgba(4,7,8,.42) 68%,rgba(4,7,8,.22) 100%),
+    linear-gradient(0deg,rgba(4,7,8,.82) 0%,transparent 42%,rgba(4,7,8,.25) 100%);
+}
+
+/* Replace the old technical grid with subtle light/noise treatment. */
+.hero-lines {
+  background:
+    radial-gradient(circle at 74% 32%,rgba(201,255,61,.08),transparent 26%),
+    linear-gradient(115deg,transparent 0 46%,rgba(255,255,255,.055) 46.2%,transparent 46.7%);
+  opacity:.75;
+}
+
+.hero-inner { max-width:850px; }
+.kicker.light { color:#c9ff3d; }
+.hero h1 { text-shadow:0 8px 35px rgba(0,0,0,.32); }
+.hero h1 em { color:var(--lime); }
+.hero-copy { color:#d9dfe0; max-width:680px; }
+
+.btn.lime {
+  color:#080b0c;
+  box-shadow:0 10px 30px rgba(201,255,61,.16);
+}
+.btn.ghost {
+  background:rgba(7,10,11,.38);
+  border-color:rgba(255,255,255,.3);
+}
+
+.hero-bottom {
+  border-top:1px solid rgba(255,255,255,.18);
+}
+.hero-bottom div { border-right:1px solid rgba(255,255,255,.1); }
+.hero-bottom small { color:#aeb8bb; }
+.hero-bottom b { color:#f5f7f6; }
+.hero-bottom b span { color:var(--lime); }
+
+/* General site palette */
+.statement,
+.quality,
+.industries { background:#f0f3f1; color:#0b0f10; }
+
+.section { background:#eef1ef; }
+.experience { background:#d8dfdc; color:#0b0f10; }
+.risk-grid>div,
+.journey article,
+.quality-chain>div,
+.quality-cards div,
+.industry-grid article { background:#f5f7f6; }
+
+.control,
+.logistics { background:#080b0c; }
+.network { background:#d8dfdc; color:#0b0f10; }
+.confidential,
+.pack { background:#eef1ef; color:#0b0f10; }
+.closing { background:#cfd8d4; color:#0b0f10; }
+.contact { background:var(--lime); color:#080b0c; }
+
+.section h2,
+.statement h2,
+.experience h2,
+.network h2,
+.confidential h2,
+.logistics h2,
+.pack h2,
+.closing h2,
+.contact h2 { color:inherit; }
+
+.statement h2 span,
+.section h2 span,
+.experience h2 span,
+.network h2 span,
+.confidential h2 span,
+.logistics h2 span,
+.pack h2 span,
+.closing h2 span,
+.contact h2 span { color:#687579; }
+
+/* Premium cards: less corporate-template, more industrial */
+.journey article,
+.risk-grid>div,
+.quality-cards>div,
+.industry-grid article {
+  border-color:#cbd2d0;
+}
+
+.journey article:hover {
+  box-shadow:0 25px 70px rgba(0,0,0,.16);
+}
+
+/* Keep dashboard realistic rather than game-like */
+.dashboard { box-shadow:0 35px 90px rgba(0,0,0,.42); }
+
+/* Subtle green signal accents */
+.quality-cards div { border-top-color:var(--lime); }
+.tags span,
+.route-list span { border-color:#465154; }
+
+@media (max-width:620px) {
+  .hero { min-height:800px; }
+  .hero-media { background-position:60% center; }
+}
