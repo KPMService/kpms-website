@@ -20,14 +20,7 @@
 
 * { box-sizing: border-box; }
 html { scroll-behavior: smooth; }
-
-body {
-  margin: 0;
-  background: var(--paper);
-  color: var(--ink);
-  font-family: "DM Sans", sans-serif;
-}
-
+body { margin: 0; background: var(--paper); color: var(--ink); font-family: "DM Sans", sans-serif; }
 a { text-decoration: none; color: inherit; }
 button { font-family: inherit; }
 
@@ -159,12 +152,12 @@ button { font-family: inherit; }
 .chart i { width: 28px; background: #68757a; }
 .lines { display: grid; gap: 7px; margin-top: 20px; }
 .lines span { height: 5px; background: #e1e5e5; width: 90%; }
-.stamp { position: absolute; right: 28px; bottom: 18px; border: 1px solid #9aa4a8; padding: 6px; font-size: 7px; letter-spacing: .1em; }
-.reports h3 { font: 700 31px Manrope; margin: 0; }
-.reports h3 span { color: #9facae; }
-.reports p:not(.kicker) { color: #aeb8bc; font-size: 13px; }
-.tags { display: flex; gap: 7px; }
-.tags span { border: 1px solid #424c50; padding: 7px 9px; font-size: 8px; letter-spacing: .1em; }
+.stamp { position: absolute; right: 28px; bottom: 25px; font: 800 12px Manrope; text-align: center; color: #9aa4a8; border: 1px solid #cbd2d2; padding: 8px; transform: rotate(-7deg); }
+.reports h3 { font: 700 30px Manrope; margin: 0 0 14px; }
+.reports h3 span { color: #8d999d; }
+.reports p:not(.kicker) { color: #aeb8bc; line-height: 1.6; }
+.tags { display: flex; gap: 7px; margin-top: 25px; }
+.tags span { padding: 8px 10px; border: 1px solid #394448; font-size: 8px; letter-spacing: .12em; }
 
 /* =========================================================
    8. QUALITY / SHIPMENT
@@ -209,7 +202,7 @@ button { font-family: inherit; }
 .logistics .map { display: none !important; }
 .logistics-copy p:not(.kicker) { color: #5f6a6f; line-height: 1.65; font-size: 14px; }
 .logistics-list { display: grid; grid-template-columns: 1fr 1fr; gap: 8px; margin-top: 25px; max-width: 950px; }
-.logistics-list div { padding: 15px; background: #edf1ef; border: 1px solid #d2d9d7; font-size: 10px; font-weight: 700; }
+.logistics-list div { padding: 15px; background: #edf1ef; border: 1px solid #d2d9d7; font-size: 10px; font-weight: 700; color: #101517; }
 .logistics-copy:after { content: ""; display: block; width: 100%; margin-top: 42px; aspect-ratio: 21 / 8; background-image: url("images/06-container-ship.jpg"); background-size: cover; background-position: center; background-repeat: no-repeat; border-radius: 2px; box-shadow: 0 22px 55px rgba(10,18,20,.18); -webkit-mask-image: linear-gradient(to bottom, transparent 0, #000 8%, #000 92%, transparent 100%); mask-image: linear-gradient(to bottom, transparent 0, #000 8%, #000 92%, transparent 100%); }
 
 /* =========================================================
@@ -222,18 +215,31 @@ button { font-family: inherit; }
 .packing-image { width: 100%; height: auto; min-height: 0; aspect-ratio: 21 / 9; background-image: url("images/06-container-ship.jpg") !important; background-size: contain !important; background-repeat: no-repeat !important; background-position: center !important; background-color: #101719 !important; }
 
 /* =========================================================
-   13. CLOSING / INDUSTRIAL EXPERIENCE GRID
+   13. INDUSTRIES / SEKTÖRLER
+   ========================================================= */
+.industries { background: #111719; color: #fff; position: relative; overflow: hidden; }
+.industries .kicker { color: #9ba6aa; }
+.industries .section-head { margin-bottom: 48px; }
+.industries h2 { color: #fff; max-width: 900px; }
+.industries h2 span { color: #8f9a9e; }
+.industry-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 1px; margin-top: 55px; border-top: 1px solid #303a3e; border-left: 1px solid #303a3e; }
+.industry-grid article { min-height: 245px; padding: 30px; background: #151d20; border-right: 1px solid #303a3e; border-bottom: 1px solid #303a3e; display: flex; flex-direction: column; justify-content: space-between; transition: background .25s, transform .25s, border-color .25s; }
+.industry-grid article:hover { background: #1b2528; border-color: #59666b; transform: translateY(-3px); }
+.industry-grid article b { font: 700 11px Manrope; color: #7e8b90; letter-spacing: .12em; }
+.industry-grid article h3 { margin: 55px 0 12px; font: 700 clamp(23px, 2.2vw, 31px)/1.05 Manrope, sans-serif; letter-spacing: -.04em; color: #fff; max-width: 390px; }
+.industry-grid article p { margin: 0; color: #9eaaae; font-size: 12px; line-height: 1.6; max-width: 430px; }
+.industry-grid article:after { content: "↗"; align-self: flex-end; margin-top: 25px; font-size: 18px; color: var(--lime); opacity: .75; transition: transform .25s; }
+.industry-grid article:hover:after { transform: translate(4px,-4px); }
+
+/* =========================================================
+   14. CLOSING
    ========================================================= */
 .closing { padding: 125px 9vw; background: #111719; color: #fff; }
 .closing h2 { max-width: 1000px; }
 .closing p:not(.kicker) { color: #aeb8bc; max-width: 650px; line-height: 1.65; }
-.industry-grid { display: grid; grid-template-columns: repeat(3,1fr); gap: 10px; margin-top: 55px; }
-.industry-grid article { min-height: 280px; padding: 28px; background-image: linear-gradient(180deg, rgba(6,12,14,.2), rgba(6,12,14,.88)), url("images/07-industrial-experience.jpg"); background-size: cover; background-position: center; display: flex; flex-direction: column; justify-content: end; border: 1px solid #303a3e; }
-.industry-grid article b { font: 700 22px Manrope; }
-.industry-grid article span { font-size: 10px; color: #c4cdd0; margin-top: 7px; }
 
 /* =========================================================
-   14. CONTACT / FORM
+   15. CONTACT / FORM
    ========================================================= */
 .contact { padding: 120px 9vw; background: #dfe5e3; }
 .contact-grid { display: grid; grid-template-columns: 1fr .8fr; gap: 100px; }
@@ -244,13 +250,13 @@ button { font-family: inherit; }
 .contact-form button { border: 0; padding: 15px; background: var(--ink); color: #fff; font-weight: 800; }
 
 /* =========================================================
-   15. FOOTER
+   16. FOOTER
    ========================================================= */
 .footer { padding: 35px 9vw; background: #101415; color: #aeb8bc; display: flex; justify-content: space-between; font-size: 10px; }
 .footer b { color: #fff; }
 
 /* =========================================================
-   16. TABLET / RESPONSIVE — 1000px ALTINDA
+   17. TABLET / RESPONSIVE — 1000px ALTINDA
    ========================================================= */
 @media (max-width: 1000px) {
   .site-nav nav { display: none; }
@@ -268,7 +274,7 @@ button { font-family: inherit; }
 }
 
 /* =========================================================
-   17. TELEFON / MOBILE — 640px ALTINDA
+   18. TELEFON / MOBILE — 640px ALTINDA
    ========================================================= */
 @media (max-width: 640px) {
   .site-nav { height: 68px; padding: 0 5vw; }
@@ -290,5 +296,5 @@ button { font-family: inherit; }
   .network-copy { padding: 60px 6vw; }
   .footer { display: block; }
   .footer span { display: block; margin-top: 10px; }
-  .logistics-copy:after { margin-top: 28px; aspect-ratio: 16 / 9; background-size: cover; }
+  .logistics-copy:after { margin-top: 28px; aspect-ratio: 16 / 9; }
 }
