@@ -1,0 +1,53 @@
+name: Update industrial imagery
+
+on:
+  push:
+    branches: [main]
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+jobs:
+  update-images:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Replace industrial image URLs
+        shell: python
+        run: |
+          from pathlib import Path
+          import re
+
+          path = Path("styles.css")
+          css = path.read_text(encoding="utf-8")
+
+          replacements = {
+              ".p2": "https://images.unsplash.com/photo-1738162837389-3b02d6dd507b?auto=format&fit=crop&fm=jpg&ixlib=rb-4.1.0&q=80&w=1400",
+              ".p3": "https://images.unsplash.com/photo-1748347084012-075796185d56?auto=format&fit=crop&fm=jpg&ixlib=rb-4.1.0&q=80&w=1400",
+              ".p4": "https://images.unsplash.com/photo-1774929108070-b60d3879e071?auto=format&fit=crop&fm=jpg&ixlib=rb-4.1.0&q=80&w=1400",
+          }
+
+          for selector, url in replacements.items():
+              pattern = rf"({re.escape(selector)}\s*\{{.*?background-image:\s*url\(['\"])(.*?)(['\"]\)\s*\}})"
+              css, count = re.subn(pattern, lambda m: m.group(1)[:m.group(1).rfind(m.group(2))] + url + m.group(3), css, count=1, flags=re.S)
+
+          network_pattern = r"(\.network-photo\s*\{.*?background:\s*linear-gradient\([^;]+\),url\(['\"])(.*?)(['\"]\)\s*center/cover)"
+          network_url = "https://images.unsplash.com/photo-1513257805917-a0da1146eb15?auto=format&fit=crop&fm=jpg&ixlib=rb-4.1.0&q=80&w=1800"
+          css, _ = re.subn(network_pattern, lambda m: m.group(1) + network_url + m.group(3), css, count=1, flags=re.S)
+
+          path.write_text(css, encoding="utf-8")
+
+      - name: Commit changes
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add styles.css
+          if git diff --cached --quiet; then
+            echo "No image changes needed."
+          else
+            git commit -m "Refresh industrial project imagery"
+            git push
+          fi
