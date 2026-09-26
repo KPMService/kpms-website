@@ -1,10 +1,876 @@
-:root{--ink:#101517;--paper:#eef1ef;--white:#fff;--muted:#68747a;--line:#d4dcda;--lime:#c9ff3d;--dark:#101415}*{box-sizing:border-box}html{scroll-behavior:smooth}body{margin:0;background:var(--paper);color:var(--ink);font-family:"DM Sans",sans-serif}a{text-decoration:none;color:inherit}button{font-family:inherit}.progress{position:fixed;z-index:200;top:0;left:0;height:3px;width:0;background:var(--lime)}.site-nav{height:78px;position:sticky;top:0;z-index:190;display:flex;align-items:center;padding:0 5vw;background:rgba(238,241,239,.94);border-bottom:1px solid var(--line);backdrop-filter:blur(18px)}.logo{display:flex;align-items:center;gap:10px;font:800 17px Manrope,sans-serif;letter-spacing:-.04em}.logo>span{width:31px;height:31px;display:grid;place-items:center;background:var(--ink);color:var(--lime)}.logo small{font:700 7px "DM Sans";letter-spacing:.13em;color:#737d82;margin-left:3px}.site-nav nav{display:flex;gap:26px;align-items:center;margin-left:auto;font-size:12px;color:#465055}.nav-btn{padding:11px 15px;background:var(--ink);color:#fff!important}.menu{display:none;border:0;background:none;font-size:20px}.language-switcher{display:flex;gap:3px;margin-left:20px;padding:3px;border:1px solid #cbd3d1;border-radius:999px;background:#fff}.lang-btn{border:0;border-radius:999px;padding:6px 9px;background:transparent;color:#657076;font:700 9px "DM Sans";cursor:pointer}.lang-btn.active{background:var(--ink);color:#fff}.hero{min-height:870px;position:relative;color:#fff;display:flex;align-items:center;padding:100px 8vw;overflow:hidden;background:#101619;isolation:isolate}.hero-media{position:absolute;inset:0;z-index:-3;background-image:url("images/hero-industrial.jpg"),url("images/hero-industrial.png");background-size:cover;background-position:center;background-repeat:no-repeat;filter:saturate(.8) contrast(1.05) brightness(.92)}.hero-tint{position:absolute;inset:0;z-index:-2;background:linear-gradient(90deg,rgba(7,14,16,.78),rgba(7,14,16,.43) 44%,rgba(7,14,16,.12)),linear-gradient(0deg,rgba(7,14,16,.32),transparent 58%,rgba(7,14,16,.15))}.hero-lines{position:absolute;inset:0;z-index:-1;background:radial-gradient(circle at 78% 28%,rgba(201,255,61,.08),transparent 28%);pointer-events:none}.hero-inner{position:relative;z-index:2;max-width:900px}.kicker{font-size:10px;letter-spacing:.19em;font-weight:800;color:#7b878c;margin:0 0 19px}.kicker.light{color:#c1c9cc}.hero h1,.section h2,.statement h2,.experience h2,.control h2,.network h2,.confidential h2,.logistics h2,.pack h2,.closing h2,.contact h2{font:800 clamp(46px,6.5vw,96px)/.98 Manrope,sans-serif;letter-spacing:-.065em;margin:0}.hero h1 em{font-style:normal;color:var(--lime)}.hero-copy{font-size:19px;line-height:1.55;color:#e1e7e8;max-width:720px;margin:30px 0}.actions{display:flex;gap:11px;flex-wrap:wrap}.btn{display:inline-flex;gap:28px;align-items:center;padding:15px 19px;font-size:12px;font-weight:800;border:1px solid;transition:.2s}.btn.lime{background:var(--lime);border-color:var(--lime);color:#111516}.btn.ghost{border-color:rgba(220,230,231,.55);color:#fff;background:rgba(16,22,24,.42)}.btn.dark{background:var(--ink);color:#fff;border-color:var(--ink)}.hero-bottom{position:absolute;z-index:3;left:8vw;right:8vw;bottom:34px;display:grid;grid-template-columns:repeat(4,1fr);border-top:1px solid rgba(255,255,255,.22)}.hero-bottom div{padding:16px 0;border-right:1px solid rgba(255,255,255,.12)}.hero-bottom div+div{padding-left:22px}.hero-bottom b{font:800 clamp(35px,4vw,56px) Manrope,sans-serif;display:block}.hero-bottom b span{color:var(--lime)}.hero-bottom small{font-size:9px;text-transform:uppercase;letter-spacing:.1em;color:#c5ced0}.statement{display:grid;grid-template-columns:1.15fr .85fr;gap:80px;padding:120px 9vw;background:#fff}.statement h2 span,.section h2 span,.experience h2 span,.network h2 span,.confidential h2 span,.logistics h2 span,.pack h2 span,.closing h2 span,.contact h2 span{color:#788389}.statement>p{align-self:end;color:var(--muted);font-size:17px;max-width:500px}.section{padding:115px 9vw}.section-head{display:flex;justify-content:space-between;align-items:end;gap:70px;margin-bottom:58px}.section-head>p{max-width:470px;color:var(--muted);margin:0}#model{background:#121719;color:#fff;position:relative;overflow:hidden}#model .kicker{color:#9ba6aa}#model .section-head>p{color:#aeb8bc}#model h2{color:#fff}#model h2 span{color:#8f9a9e}.journey{display:grid;grid-template-columns:repeat(4,1fr);gap:12px}.journey article{background:#1a2225;border:1px solid #303a3e;padding:20px;min-height:500px;position:relative;overflow:hidden;transition:transform .35s}.journey article:hover{transform:translateY(-7px)}.journey article>span{font:700 10px Manrope;color:#8d999d}.journey h3{font:700 23px Manrope;margin:0 0 10px;color:#fff}.journey p{font-size:13px;color:#aeb8bc;line-height:1.55}.photo{height:220px;margin:18px -20px 25px;position:relative;overflow:hidden;background-size:cover;background-position:center;filter:saturate(.88) contrast(1.02);border-bottom:2px solid var(--lime)}.photo.p1{background-image:url("images/01-engineering-support.jpg")}.photo.p2 {
-    background-image:url('https://images.unsplash.com/photo-1738162837389-3b02d6dd507b?auto=format&fit=crop&fm=jpg&ixlib=rb-4.1.0&q=80&w=1400')
-}.photo.p3 {
-    background-image:url('https://images.unsplash.com/photo-1748347084012-075796185d56?auto=format&fit=crop&fm=jpg&ixlib=rb-4.1.0&q=80&w=1400')
-}.photo.p4 {
-    background-image:url('https://images.unsplash.com/photo-1774929108070-b60d3879e071?auto=format&fit=crop&fm=jpg&ixlib=rb-4.1.0&q=80&w=1400')
-}.photo:after{content:"";position:absolute;inset:0;background:linear-gradient(180deg,transparent 48%,rgba(0,0,0,.25))}.experience{padding:120px 9vw;display:grid;grid-template-columns:.9fr 1.1fr;gap:100px;background:#dfe5e3}.big-number strong{font:800 clamp(100px,13vw,190px) Manrope;letter-spacing:-.09em;display:block;line-height:.8}.big-number span{display:block;margin-top:35px;font-size:13px;text-transform:uppercase;letter-spacing:.1em;color:#59656a}.experience-copy h2{font-size:clamp(48px,5vw,75px)}.experience-copy>p:not(.kicker){color:var(--muted);font-size:15px;line-height:1.6}.mini-stats{display:grid;grid-template-columns:repeat(3,1fr);margin-top:35px;border-top:1px solid #bfc7c7}.mini-stats div{padding:18px 12px 0 0}.mini-stats b{font:800 30px Manrope;display:block}.mini-stats span{font-size:10px;color:#687278}.risk{background:#111719;color:#fff}.risk .kicker{color:#9ba6aa}.risk .section-head>p{color:#aeb8bc}.risk h2{color:#fff}.risk h2 span{color:#8f999d}.risk-grid{display:grid;grid-template-columns:repeat(4,1fr);border-top:1px solid #303a3e;border-left:1px solid #303a3e}.risk-grid>div{padding:30px;min-height:290px;border-right:1px solid #303a3e;border-bottom:1px solid #303a3e;background:#1a2225}.risk-grid b{font-size:10px;color:#8d999d}.risk-grid h3{font:700 25px Manrope;margin:55px 0 12px;color:#fff}.risk-grid p{font-size:13px;color:#aeb8bc;line-height:1.55}.control{background:#101415;color:#fff;padding:125px 9vw}.control-head{display:grid;grid-template-columns:1.1fr .9fr;gap:80px;align-items:end}.control-head>p{color:#aeb8bc;max-width:480px}.control h2 span{color:#919b9f}.dashboard{margin-top:65px;background:#f1f4f2;color:#171c1e}.dashbar{height:55px;border-bottom:1px solid #d6dcdd;display:flex;align-items:center;gap:25px;padding:0 22px;font-size:9px;letter-spacing:.12em}.dashbar span{margin-left:auto;color:#778287}.dashbar i{font-style:normal;color:#55733c}.dashbody{display:grid;grid-template-columns:250px 1fr;min-height:410px}.dashbody aside{background:#e8edeb;padding:28px;border-right:1px solid #d6dcdd}.dashbody aside small{font-size:8px;color:#7a858a}.dashbody aside strong{display:block;font:800 54px Manrope;margin:7px 0}.meter{height:5px;background:#cfd6d5;margin-bottom:25px}.meter i{display:block;width:82%;height:100%;background:#91b94d}.dashbody label{display:flex;justify-content:space-between;font-size:9px;margin:15px 0}.gantt{padding:30px}.g-head{display:flex;justify-content:space-between;color:#7c868b;font-size:8px;letter-spacing:.14em;margin-bottom:30px}.grow{display:grid;grid-template-columns:105px 1fr 60px;gap:13px;align-items:center;margin:24px 0;font-size:9px}.grow>i{height:10px;background:#d7dddd}.grow em{height:100%;display:block;background:#67747a}.grow small{color:#748085}.dash-cards{display:grid;grid-template-columns:repeat(4,1fr);border-top:1px solid #d4dada;margin-top:35px;padding-top:18px;gap:12px}.dash-cards span{font-size:8px;color:#758086}.dash-cards b{display:block;font:700 22px Manrope;color:#111}.reports{display:grid;grid-template-columns:1fr .8fr;gap:90px;align-items:center;margin-top:75px}.report-sheet{height:310px;background:#fff;color:#172022;padding:35px;position:relative}.report-title{font:800 12px Manrope;border-bottom:1px solid #d9dddd;padding-bottom:15px}.chart{height:100px;display:flex;align-items:end;gap:9px;border-bottom:1px solid #d9dddd;margin-top:25px}.chart i{width:28px;background:#68757a}.lines{display:grid;gap:7px;margin-top:20px}.lines span{height:5px;background:#e1e5e5;width:90%}.stamp{position:absolute;right:28px;bottom:18px;border:1px solid #9aa4a8;padding:6px;font-size:7px;letter-spacing:.1em}.reports h3{font:700 31px Manrope;margin:0}.reports h3 span{color:#9facae}.reports p:not(.kicker){color:#aeb8bc;font-size:13px}.tags{display:flex;gap:7px}.tags span{border:1px solid #424c50;padding:7px 9px;font-size:8px;letter-spacing:.1em}.quality{background:#fff}.quality-chain{display:flex;gap:8px;align-items:stretch;flex-wrap:wrap}.quality-chain>div{background:#f2f5f3;border:1px solid #dce1e1;padding:18px 15px;min-width:110px;display:flex;flex-direction:column;gap:8px;font-size:11px;font-weight:700}.quality-chain b{font-size:8px;color:#8a9498}.quality-chain i{display:grid;place-items:center;font-style:normal;color:#7d878b}.quality-cards{display:grid;grid-template-columns:repeat(4,1fr);gap:10px;margin-top:35px}.quality-cards div{background:#eef2f0;padding:25px;border-top:2px solid var(--lime)}.quality-cards b{font:700 17px Manrope;display:block}.quality-cards span{font-size:10px;color:#6d777c;display:block;margin-top:8px}.network{display:grid;grid-template-columns:1.05fr .95fr;background:#081012;color:#fff}.network-photo{min-height:650px;background-image:url("images/08-workshop-network.jpg");background-size:cover;background-position:center;position:relative}.network-copy{padding:100px 9vw 90px 60px;background:#081012}.network-copy h2{color:#fff}.network-copy h2 span{color:#93a0a5}.network-copy>p{color:#aeb8bc}.network-copy ol{list-style:none;margin:35px 0 0;padding:0;border-top:1px solid #303a3e}.network-copy li{padding:15px 0;border-bottom:1px solid #303a3e;display:grid;grid-template-columns:1fr 1fr;gap:20px;font-size:11px}.network-copy li span{color:#8e9a9e}.confidential{padding:105px 9vw;background:#f7f8f7;display:flex;gap:80px;align-items:center}.nda{width:190px;height:190px;flex:0 0 190px;border:1px solid #7e898d;border-radius:50%;display:grid;place-items:center;align-content:center;background:#eef1ef}.nda span{font:800 55px Manrope;letter-spacing:-.08em}.nda small{font-size:8px;letter-spacing:.13em}.logistics{padding:120px 9vw;background:#e0e5e3}.logistics-grid{display:grid;grid-template-columns:1fr 1fr;gap:70px;align-items:center}.map{height:340px;position:relative;border:1px solid #30393d;overflow:hidden;background-image:url("images/05-global-world-map.jpg");background-size:cover;background-position:center}.logistics-copy p:not(.kicker){color:#5f6a6f;line-height:1.65;font-size:14px}.logistics-list{display:grid;grid-template-columns:1fr 1fr;gap:8px;margin-top:25px}.logistics-list div{padding:15px;background:#edf1ef;border:1px solid #d2d9d7;font-size:10px;font-weight:700}.pack{padding:120px 9vw;background:#fff}.pack-grid{display:flex!important;flex-direction:column!important;gap:45px!important;align-items:stretch!important}.pack-copy{width:100%;max-width:950px}.pack-copy p:not(.kicker){color:var(--muted);font-size:15px;line-height:1.65}.packing-image{width:100%;height:auto;min-height:0;aspect-ratio:21/9;background-image:url("images/06-container-ship.jpg")!important;background-size:contain!important;background-repeat:no-repeat!important;background-position:center!important;background-color:#101719!important}.closing{padding:125px 9vw;background:#111719;color:#fff}.closing h2{max-width:1000px}.closing p:not(.kicker){color:#aeb8bc;max-width:650px;line-height:1.65}.industry-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:10px;margin-top:55px}.industry-grid article{min-height:280px;padding:28px;background-image:linear-gradient(180deg,rgba(6,12,14,.2),rgba(6,12,14,.88)),url("images/07-industrial-experience.jpg");background-size:cover;background-position:center;display:flex;flex-direction:column;justify-content:end;border:1px solid #303a3e}.industry-grid article b{font:700 22px Manrope}.industry-grid article span{font-size:10px;color:#c4cdd0;margin-top:7px}.contact{padding:120px 9vw;background:#dfe5e3}.contact-grid{display:grid;grid-template-columns:1fr .8fr;gap:100px}.contact-copy p:not(.kicker){max-width:560px;color:#5e696e;font-size:16px;line-height:1.6}.contact-form{background:#f6f8f7;padding:35px;display:grid;gap:12px}.contact-form input,.contact-form textarea{border:1px solid #cbd3d1;padding:14px;background:#fff;font:12px "DM Sans"}.contact-form textarea{min-height:130px}.contact-form button{border:0;padding:15px;background:var(--ink);color:#fff;font-weight:800}.footer{padding:35px 9vw;background:#101415;color:#aeb8bc;display:flex;justify-content:space-between;font-size:10px}.footer b{color:#fff}@media(max-width:1000px){.site-nav nav{display:none}.menu{display:block;margin-left:auto}.language-switcher{margin-left:10px}.journey{grid-template-columns:1fr 1fr}.statement,.experience,.control-head,.network,.logistics-grid,.contact-grid{grid-template-columns:1fr}.risk-grid{grid-template-columns:1fr 1fr}.quality-cards{grid-template-columns:1fr 1fr}.reports{grid-template-columns:1fr}.network-photo{min-height:420px}.hero{min-height:760px}.hero-bottom{grid-template-columns:repeat(2,1fr)}.industry-grid{grid-template-columns:1fr 1fr}}@media(max-width:640px){.site-nav{height:68px;padding:0 5vw}.logo small{display:none}.hero{padding:90px 6vw 150px;min-height:760px}.hero-copy{font-size:16px}.hero-bottom{left:6vw;right:6vw}.hero-bottom b{font-size:34px}.section,.experience,.control,.confidential,.logistics,.pack,.closing,.contact{padding:80px 6vw}.statement{padding:80px 6vw;gap:40px}.section-head{display:block}.section-head>p{margin-top:25px}.journey,.risk-grid,.quality-cards,.industry-grid{grid-template-columns:1fr}.dashbody{grid-template-columns:1fr}.dashbody aside{border-right:0;border-bottom:1px solid #d6dcdd}.dash-cards{grid-template-columns:1fr 1fr}.packing-image{aspect-ratio:16/9}.network-photo{min-height:330px}.network-copy{padding:60px 6vw}.footer{display:block}.footer span{display:block;margin-top:10px}}
+/* =========================================================
+   KOLER INDUSTRIAL WEBSITE — MAIN STYLESHEET
+   ---------------------------------------------------------
+   Bu dosyayı okurken yukarıdan aşağıya ilerleyebilirsin.
+   Her bölümün başında neyi kontrol ettiği yazıyor.
+   ========================================================= */
 
-/* GLOBAL LOGISTICS — remove map/region labels and place the container ship directly under the section copy */
-.logistics-grid{display:block!important}.logistics-copy{max-width:950px;position:relative;z-index:2}.logistics .map{display:none!important}.logistics-copy:after{content:"";display:block;width:100%;margin-top:42px;aspect-ratio:21/8;background-image:url("images/06-container-ship.jpg");background-size:cover;background-position:center;background-repeat:no-repeat;border-radius:2px;box-shadow:0 22px 55px rgba(10,18,20,.18);-webkit-mask-image:linear-gradient(to bottom,transparent 0,#000 8%,#000 92%,transparent 100%);mask-image:linear-gradient(to bottom,transparent 0,#000 8%,#000 92%,transparent 100%)}.logistics-list{max-width:950px}@media(max-width:640px){.logistics-copy:after{margin-top:28px;aspect-ratio:16/9;background-size:cover}}
+/* =========================================================
+   1. RENKLER VE TEMEL AYARLAR
+   ========================================================= */
+:root {
+  --ink: #101517;
+  --paper: #eef1ef;
+  --white: #fff;
+  --muted: #68747a;
+  --line: #d4dcda;
+  --lime: #c9ff3d;
+  --dark: #101415;
+}
+
+* { box-sizing: border-box; }
+html { scroll-behavior: smooth; }
+
+body {
+  margin: 0;
+  background: var(--paper);
+  color: var(--ink);
+  font-family: "DM Sans", sans-serif;
+}
+
+a { text-decoration: none; color: inherit; }
+button { font-family: inherit; }
+
+/* =========================================================
+   2. ÜST MENÜ / NAVBAR
+   ========================================================= */
+.progress {
+  position: fixed;
+  z-index: 200;
+  top: 0;
+  left: 0;
+  height: 3px;
+  width: 0;
+  background: var(--lime);
+}
+
+.site-nav {
+  height: 78px;
+  position: sticky;
+  top: 0;
+  z-index: 190;
+  display: flex;
+  align-items: center;
+  padding: 0 5vw;
+  background: rgba(238, 241, 239, .94);
+  border-bottom: 1px solid var(--line);
+  backdrop-filter: blur(18px);
+}
+
+.logo {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  font: 800 17px Manrope, sans-serif;
+  letter-spacing: -.04em;
+}
+
+.logo > span {
+  width: 31px;
+  height: 31px;
+  display: grid;
+  place-items: center;
+  background: var(--ink);
+  color: var(--lime);
+}
+
+.logo small {
+  font: 700 7px "DM Sans";
+  letter-spacing: .13em;
+  color: #737d82;
+  margin-left: 3px;
+}
+
+.site-nav nav {
+  display: flex;
+  gap: 26px;
+  align-items: center;
+  margin-left: auto;
+  font-size: 12px;
+  color: #465055;
+}
+
+.nav-btn {
+  padding: 11px 15px;
+  background: var(--ink);
+  color: #fff !important;
+}
+
+.menu {
+  display: none;
+  border: 0;
+  background: none;
+  font-size: 20px;
+}
+
+/* Dil seçici: EN / TR */
+.language-switcher {
+  display: flex;
+  gap: 3px;
+  margin-left: 20px;
+  padding: 3px;
+  border: 1px solid #cbd3d1;
+  border-radius: 999px;
+  background: #fff;
+}
+
+.lang-btn {
+  border: 0;
+  border-radius: 999px;
+  padding: 6px 9px;
+  background: transparent;
+  color: #657076;
+  font: 700 9px "DM Sans";
+  cursor: pointer;
+}
+
+.lang-btn.active {
+  background: var(--ink);
+  color: #fff;
+}
+
+/* =========================================================
+   3. HERO / ANA GİRİŞ ALANI
+   ========================================================= */
+.hero {
+  min-height: 870px;
+  position: relative;
+  color: #fff;
+  display: flex;
+  align-items: center;
+  padding: 100px 8vw;
+  overflow: hidden;
+  background: #101619;
+  isolation: isolate;
+}
+
+.hero-media {
+  position: absolute;
+  inset: 0;
+  z-index: -3;
+  background-image: url("images/hero-industrial.jpg"), url("images/hero-industrial.png");
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  filter: saturate(.8) contrast(1.05) brightness(.92);
+}
+
+.hero-tint {
+  position: absolute;
+  inset: 0;
+  z-index: -2;
+  background:
+    linear-gradient(90deg, rgba(7,14,16,.78), rgba(7,14,16,.43) 44%, rgba(7,14,16,.12)),
+    linear-gradient(0deg, rgba(7,14,16,.32), transparent 58%, rgba(7,14,16,.15));
+}
+
+.hero-lines {
+  position: absolute;
+  inset: 0;
+  z-index: -1;
+  background: radial-gradient(circle at 78% 28%, rgba(201,255,61,.08), transparent 28%);
+  pointer-events: none;
+}
+
+.hero-inner {
+  position: relative;
+  z-index: 2;
+  max-width: 900px;
+}
+
+.kicker {
+  font-size: 10px;
+  letter-spacing: .19em;
+  font-weight: 800;
+  color: #7b878c;
+  margin: 0 0 19px;
+}
+
+.kicker.light { color: #c1c9cc; }
+
+.hero h1,
+.section h2,
+.statement h2,
+.experience h2,
+.control h2,
+.network h2,
+.confidential h2,
+.logistics h2,
+.pack h2,
+.closing h2,
+.contact h2 {
+  font: 800 clamp(46px, 6.5vw, 96px)/.98 Manrope, sans-serif;
+  letter-spacing: -.065em;
+  margin: 0;
+}
+
+.hero h1 em {
+  font-style: normal;
+  color: var(--lime);
+}
+
+.hero-copy {
+  font-size: 19px;
+  line-height: 1.55;
+  color: #e1e7e8;
+  max-width: 720px;
+  margin: 30px 0;
+}
+
+.actions {
+  display: flex;
+  gap: 11px;
+  flex-wrap: wrap;
+}
+
+.btn {
+  display: inline-flex;
+  gap: 28px;
+  align-items: center;
+  padding: 15px 19px;
+  font-size: 12px;
+  font-weight: 800;
+  border: 1px solid;
+  transition: .2s;
+}
+
+.btn.lime { background: var(--lime); border-color: var(--lime); color: #111516; }
+.btn.ghost { border-color: rgba(220,230,231,.55); color: #fff; background: rgba(16,22,24,.42); }
+.btn.dark { background: var(--ink); color: #fff; border-color: var(--ink); }
+
+.hero-bottom {
+  position: absolute;
+  z-index: 3;
+  left: 8vw;
+  right: 8vw;
+  bottom: 34px;
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  border-top: 1px solid rgba(255,255,255,.22);
+}
+
+.hero-bottom div {
+  padding: 16px 0;
+  border-right: 1px solid rgba(255,255,255,.12);
+}
+
+.hero-bottom div + div { padding-left: 22px; }
+
+.hero-bottom b {
+  font: 800 clamp(35px,4vw,56px) Manrope, sans-serif;
+  display: block;
+}
+
+.hero-bottom b span { color: var(--lime); }
+.hero-bottom small { font-size: 9px; text-transform: uppercase; letter-spacing: .1em; color: #c5ced0; }
+
+/* =========================================================
+   4. GENEL BÖLÜM / SECTION AYARLARI
+   ========================================================= */
+.section { padding: 115px 9vw; }
+
+.section-head {
+  display: flex;
+  justify-content: space-between;
+  align-items: end;
+  gap: 70px;
+  margin-bottom: 58px;
+}
+
+.section-head > p {
+  max-width: 470px;
+  color: var(--muted);
+  margin: 0;
+}
+
+.statement {
+  display: grid;
+  grid-template-columns: 1.15fr .85fr;
+  gap: 80px;
+  padding: 120px 9vw;
+  background: #fff;
+}
+
+.statement h2 span,
+.section h2 span,
+.experience h2 span,
+.network h2 span,
+.confidential h2 span,
+.logistics h2 span,
+.pack h2 span,
+.closing h2 span,
+.contact h2 span {
+  color: #788389;
+}
+
+.statement > p {
+  align-self: end;
+  color: var(--muted);
+  font-size: 17px;
+  max-width: 500px;
+}
+
+/* =========================================================
+   5. İŞ MODELİ / JOURNEY CARDS
+   ========================================================= */
+#model {
+  background: #121719;
+  color: #fff;
+  position: relative;
+  overflow: hidden;
+}
+
+#model .kicker { color: #9ba6aa; }
+#model .section-head > p { color: #aeb8bc; }
+#model h2 { color: #fff; }
+#model h2 span { color: #8f9a9e; }
+
+.journey {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 12px;
+}
+
+.journey article {
+  background: #1a2225;
+  border: 1px solid #303a3e;
+  padding: 20px;
+  min-height: 500px;
+  position: relative;
+  overflow: hidden;
+  transition: transform .35s;
+}
+
+.journey article:hover { transform: translateY(-7px); }
+.journey article > span { font: 700 10px Manrope; color: #8d999d; }
+.journey h3 { font: 700 23px Manrope; margin: 0 0 10px; color: #fff; }
+.journey p { font-size: 13px; color: #aeb8bc; line-height: 1.55; }
+
+/* Kartların fotoğrafları */
+.photo {
+  height: 220px;
+  margin: 18px -20px 25px;
+  position: relative;
+  overflow: hidden;
+  background-size: cover;
+  background-position: center;
+  filter: saturate(.88) contrast(1.02);
+  border-bottom: 2px solid var(--lime);
+}
+
+.photo.p1 { background-image: url("images/01-engineering-support.jpg"); }
+.photo.p2 { background-image: url("https://images.unsplash.com/photo-1738162837389-3b02d6dd507b?auto=format&fit=crop&fm=jpg&ixlib=rb-4.1.0&q=80&w=1400"); }
+.photo.p3 { background-image: url("https://images.unsplash.com/photo-1748347084012-075796185d56?auto=format&fit=crop&fm=jpg&ixlib=rb-4.1.0&q=80&w=1400"); }
+.photo.p4 { background-image: url("https://images.unsplash.com/photo-1774929108070-b60d3879e071?auto=format&fit=crop&fm=jpg&ixlib=rb-4.1.0&q=80&w=1400"); }
+
+.photo:after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(180deg, transparent 48%, rgba(0,0,0,.25));
+}
+
+/* =========================================================
+   6. EXPERIENCE / INDUSTRIAL EXPERIENCE
+   ========================================================= */
+.experience {
+  padding: 120px 9vw;
+  display: grid;
+  grid-template-columns: .9fr 1.1fr;
+  gap: 100px;
+  background: #dfe5e3;
+}
+
+.big-number strong {
+  font: 800 clamp(100px,13vw,190px) Manrope;
+  letter-spacing: -.09em;
+  display: block;
+  line-height: .8;
+}
+
+.big-number span {
+  display: block;
+  margin-top: 35px;
+  font-size: 13px;
+  text-transform: uppercase;
+  letter-spacing: .1em;
+  color: #59656a;
+}
+
+.experience-copy h2 { font-size: clamp(48px,5vw,75px); }
+.experience-copy > p:not(.kicker) { color: var(--muted); font-size: 15px; line-height: 1.6; }
+
+.mini-stats {
+  display: grid;
+  grid-template-columns: repeat(3,1fr);
+  margin-top: 35px;
+  border-top: 1px solid #bfc7c7;
+}
+
+.mini-stats div { padding: 18px 12px 0 0; }
+.mini-stats b { font: 800 30px Manrope; display: block; }
+.mini-stats span { font-size: 10px; color: #687278; }
+
+/* =========================================================
+   7. RISK / CONTROL / PROJECT MANAGEMENT
+   ========================================================= */
+.risk { background: #111719; color: #fff; }
+.risk .kicker { color: #9ba6aa; }
+.risk .section-head > p { color: #aeb8bc; }
+.risk h2 { color: #fff; }
+.risk h2 span { color: #8f999d; }
+
+.risk-grid {
+  display: grid;
+  grid-template-columns: repeat(4,1fr);
+  border-top: 1px solid #303a3e;
+  border-left: 1px solid #303a3e;
+}
+
+.risk-grid > div {
+  padding: 30px;
+  min-height: 290px;
+  border-right: 1px solid #303a3e;
+  border-bottom: 1px solid #303a3e;
+  background: #1a2225;
+}
+
+.risk-grid b { font-size: 10px; color: #8d999d; }
+.risk-grid h3 { font: 700 25px Manrope; margin: 55px 0 12px; color: #fff; }
+.risk-grid p { font-size: 13px; color: #aeb8bc; line-height: 1.55; }
+
+.control {
+  background: #101415;
+  color: #fff;
+  padding: 125px 9vw;
+}
+
+.control-head {
+  display: grid;
+  grid-template-columns: 1.1fr .9fr;
+  gap: 80px;
+  align-items: end;
+}
+
+.control-head > p { color: #aeb8bc; max-width: 480px; }
+.control h2 span { color: #919b9f; }
+
+/* Dashboard görseli */
+.dashboard {
+  margin-top: 65px;
+  background: #f1f4f2;
+  color: #171c1e;
+}
+
+.dashbar {
+  height: 55px;
+  border-bottom: 1px solid #d6dcdd;
+  display: flex;
+  align-items: center;
+  gap: 25px;
+  padding: 0 22px;
+  font-size: 9px;
+  letter-spacing: .12em;
+}
+
+.dashbar span { margin-left: auto; color: #778287; }
+.dashbar i { font-style: normal; color: #55733c; }
+
+.dashbody {
+  display: grid;
+  grid-template-columns: 250px 1fr;
+  min-height: 410px;
+}
+
+.dashbody aside {
+  background: #e8edeb;
+  padding: 28px;
+  border-right: 1px solid #d6dcdd;
+}
+
+.dashbody aside small { font-size: 8px; color: #7a858a; }
+.dashbody aside strong { display: block; font: 800 54px Manrope; margin: 7px 0; }
+.meter { height: 5px; background: #cfd6d5; margin-bottom: 25px; }
+.meter i { display: block; width: 82%; height: 100%; background: #91b94d; }
+.dashbody label { display: flex; justify-content: space-between; font-size: 9px; margin: 15px 0; }
+.gantt { padding: 30px; }
+.g-head { display: flex; justify-content: space-between; color: #7c868b; font-size: 8px; letter-spacing: .14em; margin-bottom: 30px; }
+.grow { display: grid; grid-template-columns: 105px 1fr 60px; gap: 13px; align-items: center; margin: 24px 0; font-size: 9px; }
+.grow > i { height: 10px; background: #d7dddd; }
+.grow em { height: 100%; display: block; background: #67747a; }
+.grow small { color: #748085; }
+
+.dash-cards {
+  display: grid;
+  grid-template-columns: repeat(4,1fr);
+  border-top: 1px solid #d4dada;
+  margin-top: 35px;
+  padding-top: 18px;
+  gap: 12px;
+}
+
+.dash-cards span { font-size: 8px; color: #758086; }
+.dash-cards b { display: block; font: 700 22px Manrope; color: #111; }
+
+.reports {
+  display: grid;
+  grid-template-columns: 1fr .8fr;
+  gap: 90px;
+  align-items: center;
+  margin-top: 75px;
+}
+
+.report-sheet { height: 310px; background: #fff; color: #172022; padding: 35px; position: relative; }
+.report-title { font: 800 12px Manrope; border-bottom: 1px solid #d9dddd; padding-bottom: 15px; }
+.chart { height: 100px; display: flex; align-items: end; gap: 9px; border-bottom: 1px solid #d9dddd; margin-top: 25px; }
+.chart i { width: 28px; background: #68757a; }
+.lines { display: grid; gap: 7px; margin-top: 20px; }
+.lines span { height: 5px; background: #e1e5e5; width: 90%; }
+.stamp { position: absolute; right: 28px; bottom: 18px; border: 1px solid #9aa4a8; padding: 6px; font-size: 7px; letter-spacing: .1em; }
+.reports h3 { font: 700 31px Manrope; margin: 0; }
+.reports h3 span { color: #9facae; }
+.reports p:not(.kicker) { color: #aeb8bc; font-size: 13px; }
+.tags { display: flex; gap: 7px; }
+.tags span { border: 1px solid #424c50; padding: 7px 9px; font-size: 8px; letter-spacing: .1em; }
+
+/* =========================================================
+   8. QUALITY / SHIPMENT
+   ========================================================= */
+.quality { background: #fff; }
+.quality-chain { display: flex; gap: 8px; align-items: stretch; flex-wrap: wrap; }
+
+.quality-chain > div {
+  background: #f2f5f3;
+  border: 1px solid #dce1e1;
+  padding: 18px 15px;
+  min-width: 110px;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  font-size: 11px;
+  font-weight: 700;
+}
+
+.quality-chain b { font-size: 8px; color: #8a9498; }
+.quality-chain i { display: grid; place-items: center; font-style: normal; color: #7d878b; }
+
+.quality-cards {
+  display: grid;
+  grid-template-columns: repeat(4,1fr);
+  gap: 10px;
+  margin-top: 35px;
+}
+
+.quality-cards div { background: #eef2f0; padding: 25px; border-top: 2px solid var(--lime); }
+.quality-cards b { font: 700 17px Manrope; display: block; }
+.quality-cards span { font-size: 10px; color: #6d777c; display: block; margin-top: 8px; }
+
+/* =========================================================
+   9. MANUFACTURING NETWORK
+   ========================================================= */
+.network {
+  display: grid;
+  grid-template-columns: 1.05fr .95fr;
+  background: #081012;
+  color: #fff;
+}
+
+.network-photo {
+  min-height: 650px;
+  background-image: url("images/08-workshop-network.jpg");
+  background-size: cover;
+  background-position: center;
+  position: relative;
+}
+
+.network-copy { padding: 100px 9vw 90px 60px; background: #081012; }
+.network-copy h2 { color: #fff; }
+.network-copy h2 span { color: #93a0a5; }
+.network-copy > p { color: #aeb8bc; }
+.network-copy ol { list-style: none; margin: 35px 0 0; padding: 0; border-top: 1px solid #303a3e; }
+.network-copy li { padding: 15px 0; border-bottom: 1px solid #303a3e; display: grid; grid-template-columns: 1fr 1fr; gap: 20px; font-size: 11px; }
+.network-copy li span { color: #8e9a9e; }
+
+/* =========================================================
+   10. CONFIDENTIAL / NDA
+   ========================================================= */
+.confidential {
+  padding: 105px 9vw;
+  background: #f7f8f7;
+  display: flex;
+  gap: 80px;
+  align-items: center;
+}
+
+.nda {
+  width: 190px;
+  height: 190px;
+  flex: 0 0 190px;
+  border: 1px solid #7e898d;
+  border-radius: 50%;
+  display: grid;
+  place-items: center;
+  align-content: center;
+  background: #eef1ef;
+}
+
+.nda span { font: 800 55px Manrope; letter-spacing: -.08em; }
+.nda small { font-size: 8px; letter-spacing: .13em; }
+
+/* =========================================================
+   11. GLOBAL LOGISTICS / TÜRKİYE'DEN SİZİN SAHANIZA
+   ========================================================= */
+.logistics {
+  padding: 120px 9vw;
+  background: #e0e5e3;
+}
+
+/* Bu bölümde artık harita gösterilmiyor. */
+.logistics-grid {
+  display: block !important;
+}
+
+.logistics-copy {
+  max-width: 950px;
+  position: relative;
+  z-index: 2;
+}
+
+.logistics .map { display: none !important; }
+.logistics-copy p:not(.kicker) { color: #5f6a6f; line-height: 1.65; font-size: 14px; }
+
+.logistics-list {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 8px;
+  margin-top: 25px;
+  max-width: 950px;
+}
+
+.logistics-list div {
+  padding: 15px;
+  background: #edf1ef;
+  border: 1px solid #d2d9d7;
+  font-size: 10px;
+  font-weight: 700;
+}
+
+/* Konteyner gemisi: başlığın/metnin hemen altında */
+.logistics-copy:after {
+  content: "";
+  display: block;
+  width: 100%;
+  margin-top: 42px;
+  aspect-ratio: 21 / 8;
+  background-image: url("images/06-container-ship.jpg");
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  border-radius: 2px;
+  box-shadow: 0 22px 55px rgba(10,18,20,.18);
+  -webkit-mask-image: linear-gradient(to bottom, transparent 0, #000 8%, #000 92%, transparent 100%);
+  mask-image: linear-gradient(to bottom, transparent 0, #000 8%, #000 92%, transparent 100%);
+}
+
+/* =========================================================
+   12. PACKAGING & DOCUMENTATION
+   ========================================================= */
+.pack {
+  padding: 120px 9vw;
+  background: #fff;
+}
+
+/* Yazılar üstte, konteyner gemisi altta */
+.pack-grid {
+  display: flex !important;
+  flex-direction: column !important;
+  gap: 45px !important;
+  align-items: stretch !important;
+}
+
+.pack-copy {
+  width: 100%;
+  max-width: 950px;
+}
+
+.pack-copy p:not(.kicker) {
+  color: var(--muted);
+  font-size: 15px;
+  line-height: 1.65;
+}
+
+.packing-image {
+  width: 100%;
+  height: auto;
+  min-height: 0;
+  aspect-ratio: 21 / 9;
+  background-image: url("images/06-container-ship.jpg") !important;
+  background-size: contain !important;
+  background-repeat: no-repeat !important;
+  background-position: center !important;
+  background-color: #101719 !important;
+}
+
+/* =========================================================
+   13. CLOSING / INDUSTRIAL EXPERIENCE GRID
+   ========================================================= */
+.closing {
+  padding: 125px 9vw;
+  background: #111719;
+  color: #fff;
+}
+
+.closing h2 { max-width: 1000px; }
+.closing p:not(.kicker) { color: #aeb8bc; max-width: 650px; line-height: 1.65; }
+
+.industry-grid {
+  display: grid;
+  grid-template-columns: repeat(3,1fr);
+  gap: 10px;
+  margin-top: 55px;
+}
+
+.industry-grid article {
+  min-height: 280px;
+  padding: 28px;
+  background-image: linear-gradient(180deg, rgba(6,12,14,.2), rgba(6,12,14,.88)), url("images/07-industrial-experience.jpg");
+  background-size: cover;
+  background-position: center;
+  display: flex;
+  flex-direction: column;
+  justify-content: end;
+  border: 1px solid #303a3e;
+}
+
+.industry-grid article b { font: 700 22px Manrope; }
+.industry-grid article span { font-size: 10px; color: #c4cdd0; margin-top: 7px; }
+
+/* =========================================================
+   14. CONTACT / FORM
+   ========================================================= */
+.contact {
+  padding: 120px 9vw;
+  background: #dfe5e3;
+}
+
+.contact-grid {
+  display: grid;
+  grid-template-columns: 1fr .8fr;
+  gap: 100px;
+}
+
+.contact-copy p:not(.kicker) {
+  max-width: 560px;
+  color: #5e696e;
+  font-size: 16px;
+  line-height: 1.6;
+}
+
+.contact-form {
+  background: #f6f8f7;
+  padding: 35px;
+  display: grid;
+  gap: 12px;
+}
+
+.contact-form input,
+.contact-form textarea {
+  border: 1px solid #cbd3d1;
+  padding: 14px;
+  background: #fff;
+  font: 12px "DM Sans";
+}
+
+.contact-form textarea { min-height: 130px; }
+.contact-form button { border: 0; padding: 15px; background: var(--ink); color: #fff; font-weight: 800; }
+
+/* =========================================================
+   15. FOOTER
+   ========================================================= */
+.footer {
+  padding: 35px 9vw;
+  background: #101415;
+  color: #aeb8bc;
+  display: flex;
+  justify-content: space-between;
+  font-size: 10px;
+}
+
+.footer b { color: #fff; }
+
+/* =========================================================
+   16. TABLET / RESPONSIVE — 1000px ALTINDA
+   ========================================================= */
+@media (max-width: 1000px) {
+  .site-nav nav { display: none; }
+  .menu { display: block; margin-left: auto; }
+  .language-switcher { margin-left: 10px; }
+
+  .journey { grid-template-columns: 1fr 1fr; }
+  .statement,
+  .experience,
+  .control-head,
+  .network,
+  .logistics-grid,
+  .contact-grid { grid-template-columns: 1fr; }
+
+  .risk-grid { grid-template-columns: 1fr 1fr; }
+  .quality-cards { grid-template-columns: 1fr 1fr; }
+  .reports { grid-template-columns: 1fr; }
+  .network-photo { min-height: 420px; }
+  .hero { min-height: 760px; }
+  .hero-bottom { grid-template-columns: repeat(2,1fr); }
+  .industry-grid { grid-template-columns: 1fr 1fr; }
+}
+
+/* =========================================================
+   17. TELEFON / MOBILE — 640px ALTINDA
+   ========================================================= */
+@media (max-width: 640px) {
+  .site-nav { height: 68px; padding: 0 5vw; }
+  .logo small { display: none; }
+
+  .hero {
+    padding: 90px 6vw 150px;
+    min-height: 760px;
+  }
+
+  .hero-copy { font-size: 16px; }
+  .hero-bottom { left: 6vw; right: 6vw; }
+  .hero-bottom b { font-size: 34px; }
+
+  .section,
+  .experience,
+  .control,
+  .confidential,
+  .logistics,
+  .pack,
+  .closing,
+  .contact { padding: 80px 6vw; }
+
+  .statement { padding: 80px 6vw; gap: 40px; }
+  .section-head { display: block; }
+  .section-head > p { margin-top: 25px; }
+
+  .journey,
+  .risk-grid,
+  .quality-cards,
+  .industry-grid { grid-template-columns: 1fr; }
+
+  .dashbody { grid-template-columns: 1fr; }
+  .dashbody aside { border-right: 0; border-bottom: 1px solid #d6dcdd; }
+  .dash-cards { grid-template-columns: 1fr 1fr; }
+
+  .packing-image { aspect-ratio: 16 / 9; }
+  .network-photo { min-height: 330px; }
+  .network-copy { padding: 60px 6vw; }
+
+  .footer { display: block; }
+  .footer span { display: block; margin-top: 10px; }
+
+  .logistics-copy:after {
+    margin-top: 28px;
+    aspect-ratio: 16 / 9;
+    background-size: cover;
+  }
+}
