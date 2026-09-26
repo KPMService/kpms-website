@@ -1,6 +1,5 @@
 /* =========================================================
    KOLER — SITE INTERACTIONS
-   =========================================================
    English and Turkish are separate HTML pages.
    /index.html     → English
    /tr/index.html  → Turkish
@@ -8,6 +7,17 @@
    ========================================================= */
 
 document.addEventListener('DOMContentLoaded', () => {
+    /* Load the shared cinematic industrial visual theme. */
+    if (!document.querySelector('link[data-koler-theme]')) {
+        const theme = document.createElement('link');
+        theme.rel = 'stylesheet';
+        theme.href = window.location.pathname.includes('/tr/')
+            ? '../industrial-theme.css'
+            : 'industrial-theme.css';
+        theme.dataset.kolerTheme = 'true';
+        document.head.appendChild(theme);
+    }
+
     const header = document.querySelector('.site-nav');
 
     /* Language switcher: always on the far right. */
@@ -53,12 +63,12 @@ document.addEventListener('DOMContentLoaded', () => {
 
         const active = switcher.querySelector('.language-option.active');
         if (active) {
-            active.style.background = '#111516';
-            active.style.color = '#c9ff3d';
-            active.style.borderColor = '#111516';
+            active.style.background = '#c9ff3d';
+            active.style.color = '#080b0c';
+            active.style.borderColor = '#c9ff3d';
         }
 
-        switcher.querySelector('.language-divider').style.color = '#9aa4a8';
+        switcher.querySelector('.language-divider').style.color = '#687579';
 
         const nav = header.querySelector('nav');
         const menu = header.querySelector('.menu');
