@@ -18,6 +18,21 @@ document.addEventListener('DOMContentLoaded', () => {
         document.head.appendChild(theme);
     }
 
+    /* Fixed local image set — no external image URLs. */
+    const imageStyle = document.createElement('style');
+    imageStyle.dataset.kolerImages = 'true';
+    imageStyle.textContent = `
+        .photo.p1 { background-image: url("${window.location.pathname.includes('/tr/') ? '../' : ''}images/01-engineering-support.jpg") !important; }
+        .photo.p2 { background-image: url("${window.location.pathname.includes('/tr/') ? '../' : ''}images/02-manufacturer-selection.jpg") !important; }
+        .photo.p3 { background-image: url("${window.location.pathname.includes('/tr/') ? '../' : ''}images/03-production-control.jpg") !important; }
+        .photo.p4 { background-image: url("${window.location.pathname.includes('/tr/') ? '../' : ''}images/04-quality-shipment.jpg") !important; }
+        .network-photo, .map { background-image: url("${window.location.pathname.includes('/tr/') ? '../' : ''}images/05-global-world-map.jpg") !important; }
+        .packing-image { background-image: url("${window.location.pathname.includes('/tr/') ? '../' : ''}images/06-container-ship.jpg") !important; }
+        .industry-grid article,
+        .closing:before { background-image: url("${window.location.pathname.includes('/tr/') ? '../' : ''}images/07-industrial-experience.jpg") !important; }
+    `;
+    document.head.appendChild(imageStyle);
+
     const header = document.querySelector('.site-nav');
 
     /* Language switcher: always on the far right. */
