@@ -37,7 +37,6 @@ body {
 .lang-btn:hover { background:#202729; color:#fff; }
 .lang-btn.active { background:var(--lime); color:#080b0c; }
 
-/* Hero: cinematic, premium, industrial — no grid/game look */
 .hero {
   min-height:calc(100vh - 78px);
   background:#070a0b;
@@ -57,7 +56,6 @@ body {
     linear-gradient(0deg,rgba(4,7,8,.82) 0%,transparent 42%,rgba(4,7,8,.25) 100%);
 }
 
-/* Replace the old technical grid with subtle light/noise treatment. */
 .hero-lines {
   background:
     radial-gradient(circle at 74% 32%,rgba(201,255,61,.08),transparent 26%),
@@ -80,19 +78,15 @@ body {
   border-color:rgba(255,255,255,.3);
 }
 
-.hero-bottom {
-  border-top:1px solid rgba(255,255,255,.18);
-}
+.hero-bottom { border-top:1px solid rgba(255,255,255,.18); }
 .hero-bottom div { border-right:1px solid rgba(255,255,255,.1); }
 .hero-bottom small { color:#aeb8bb; }
 .hero-bottom b { color:#f5f7f6; }
 .hero-bottom b span { color:var(--lime); }
 
-/* General site palette */
 .statement,
 .quality,
 .industries { background:#f0f3f1; color:#0b0f10; }
-
 .section { background:#eef1ef; }
 .experience { background:#d8dfdc; color:#0b0f10; }
 .risk-grid>div,
@@ -100,7 +94,6 @@ body {
 .quality-chain>div,
 .quality-cards div,
 .industry-grid article { background:#f5f7f6; }
-
 .control,
 .logistics { background:#080b0c; }
 .network { background:#d8dfdc; color:#0b0f10; }
@@ -129,27 +122,251 @@ body {
 .closing h2 span,
 .contact h2 span { color:#687579; }
 
-/* Premium cards: less corporate-template, more industrial */
 .journey article,
 .risk-grid>div,
 .quality-cards>div,
-.industry-grid article {
-  border-color:#cbd2d0;
-}
-
-.journey article:hover {
-  box-shadow:0 25px 70px rgba(0,0,0,.16);
-}
-
-/* Keep dashboard realistic rather than game-like */
+.industry-grid article { border-color:#cbd2d0; }
+.journey article:hover { box-shadow:0 25px 70px rgba(0,0,0,.16); }
 .dashboard { box-shadow:0 35px 90px rgba(0,0,0,.42); }
-
-/* Subtle green signal accents */
 .quality-cards div { border-top-color:var(--lime); }
 .tags span,
 .route-list span { border-color:#465154; }
 
+/* =========================================================
+   CURRENT VISUAL ASSET SYSTEM
+   ========================================================= */
+
+/* OUR MODEL — four local industrial photos */
+#model {
+  background:#0d1214;
+  color:#f4f6f5;
+}
+
+#model .section-head > p { color:#aeb8bc; }
+#model h2 { color:#f4f6f5; }
+#model h2 span { color:#89959a; }
+
+.journey article {
+  background:#151d20;
+  border:1px solid #303b3f;
+  color:#f4f6f5;
+}
+
+.journey article > span { color:var(--lime); }
+.journey h3 { color:#fff; }
+.journey p { color:#b8c1c4; }
+
+.photo {
+  background-color:#11181a;
+  background-repeat:no-repeat;
+  background-size:cover;
+  background-position:center;
+  border-bottom:2px solid var(--lime);
+}
+
+.photo.p1 { background-image:url("images/engineering-support.jpg"); }
+.photo.p2 { background-image:url("images/manufacturer-selection.jpg"); }
+.photo.p3 { background-image:url("images/production-control.jpg"); }
+.photo.p4 { background-image:url("images/quality-shipment.jpg"); }
+
+/* Risk section — dark, readable and visually connected to the process */
+.risk {
+  background:#0b1012;
+  color:#f4f6f5;
+}
+.risk .kicker { color:var(--lime); }
+.risk .section-head > p { color:#aeb8bc; }
+.risk h2 { color:#f4f6f5; }
+.risk h2 span { color:#89959a; }
+
+.risk-grid {
+  border-color:#2c373a;
+  gap:10px;
+  border:0;
+}
+
+.risk-grid > div {
+  position:relative;
+  min-height:330px;
+  overflow:hidden;
+  border:1px solid #303b3f;
+  background:#141b1e;
+  color:#fff;
+  isolation:isolate;
+}
+
+.risk-grid > div::before {
+  content:"";
+  position:absolute;
+  inset:0;
+  z-index:-2;
+  background-size:cover;
+  background-position:center;
+  filter:saturate(.72) contrast(1.08) brightness(.48);
+  transform:scale(1.03);
+}
+
+.risk-grid > div::after {
+  content:"";
+  position:absolute;
+  inset:0;
+  z-index:-1;
+  background:linear-gradient(180deg,rgba(5,9,10,.15),rgba(5,9,10,.94));
+}
+
+.risk-grid > div:nth-child(1)::before { background-image:url("images/engineering-support.jpg"); }
+.risk-grid > div:nth-child(2)::before { background-image:url("images/manufacturer-selection.jpg"); }
+.risk-grid > div:nth-child(3)::before { background-image:url("images/production-control.jpg"); }
+.risk-grid > div:nth-child(4)::before { background-image:url("images/quality-shipment.jpg"); }
+
+.risk-grid > div > * { position:relative; z-index:1; }
+.risk-grid b { color:var(--lime); }
+.risk-grid h3 { color:#fff; }
+.risk-grid p { color:#c2cacc; }
+
+/* MANUFACTURING NETWORK — right factory image restored */
+.network {
+  background:#0c1113;
+  color:#f4f6f5;
+}
+
+.network-photo {
+  min-height:650px;
+  background-image:url("images/manufacturer-selection.jpg");
+  background-size:cover;
+  background-position:center;
+  position:relative;
+  overflow:hidden;
+}
+
+.network-photo::after {
+  content:"";
+  position:absolute;
+  inset:0;
+  background:linear-gradient(90deg,rgba(8,12,14,.06),rgba(8,12,14,.22)),linear-gradient(0deg,rgba(8,12,14,.2),transparent 55%);
+}
+
+.network-copy { background:#0c1113; }
+.network-copy .kicker { color:var(--lime); }
+.network-copy h2 { color:#fff; }
+.network-copy h2 span { color:#8d989c; }
+.network-copy > p { color:#b9c2c5; }
+.network-copy ol { border-top-color:#303a3e; }
+.network-copy li { border-bottom-color:#303a3e; }
+.network-copy li span { color:#9eaaae; }
+
+/* GLOBAL LOGISTICS — dark world map with lime route points */
+.logistics {
+  background:#080c0e;
+  color:#f4f6f5;
+}
+
+.logistics .kicker { color:var(--lime); }
+.logistics h2 { color:#fff; }
+.logistics h2 span { color:#8d989c; }
+.logistics > div:first-child > p:last-of-type { color:#b6c0c3; }
+
+.map {
+  height:390px;
+  border:1px solid #344043;
+  background-image:
+    linear-gradient(rgba(5,9,10,.10),rgba(5,9,10,.10)),
+    url("images/global-world-map.jpg");
+  background-size:cover;
+  background-position:center;
+  box-shadow:0 25px 70px rgba(0,0,0,.38);
+}
+
+.map .gridmap {
+  display:none;
+}
+
+.map .route {
+  border-top:2px solid rgba(201,255,61,.72);
+  box-shadow:0 0 10px rgba(201,255,61,.18);
+}
+
+.map .pin {
+  box-shadow:0 0 0 5px rgba(201,255,61,.12),0 8px 25px rgba(0,0,0,.4);
+}
+
+.map .pin.tr { background:var(--lime); color:#080b0c; }
+.map .pin.eu,
+.map .pin.af,
+.map .pin.us { background:#f4f6f5; color:#080b0c; }
+
+/* PACKAGING — replace the old CSS crate illustration with a real container ship */
+.packaging-image,
+.packing-image {
+  background-image:url("images/container-ship.jpg");
+  background-size:cover;
+  background-position:center;
+  min-height:520px;
+  height:520px;
+}
+
+.packing-image::after {
+  content:"";
+  position:absolute;
+  inset:0;
+  background:linear-gradient(90deg,rgba(6,10,12,.16),rgba(6,10,12,.04));
+  pointer-events:none;
+}
+
+/* Hide the old illustrative crate/metal/label so the photograph carries the section. */
+.packing-image .crate,
+.packing-image .metal,
+.packing-image .label { display:none; }
+
+/* INDUSTRIAL EXPERIENCE — real heavy-industry panorama */
+.experience {
+  position:relative;
+  overflow:hidden;
+  background:#0b1012;
+  color:#f4f6f5;
+  isolation:isolate;
+}
+
+.experience::before {
+  content:"";
+  position:absolute;
+  inset:0;
+  z-index:-2;
+  background-image:url("images/industrial-plant.jpg");
+  background-size:cover;
+  background-position:center;
+  filter:saturate(.72) contrast(1.08) brightness(.54);
+}
+
+.experience::after {
+  content:"";
+  position:absolute;
+  inset:0;
+  z-index:-1;
+  background:linear-gradient(90deg,rgba(7,11,13,.94),rgba(7,11,13,.58) 58%,rgba(7,11,13,.24));
+}
+
+.experience .big-number strong,
+.experience .experience-copy h2 { color:#fff; }
+.experience .experience-copy h2 span { color:#9aa5a9; }
+.experience .experience-copy > p:not(.kicker) { color:#c0c8ca; }
+.experience .kicker { color:var(--lime); }
+.experience .big-number span { color:#b2bdc0; }
+.experience .mini-stats { border-top-color:rgba(255,255,255,.2); }
+.experience .mini-stats b { color:#fff; }
+.experience .mini-stats span { color:#aeb8bb; }
+
+@media (max-width:950px) {
+  .network-photo { min-height:430px; }
+  .packing-image { min-height:400px; height:400px; }
+  .map { height:340px; }
+}
+
 @media (max-width:620px) {
   .hero { min-height:800px; }
   .hero-media { background-position:60% center; }
+  .risk-grid > div { min-height:280px; }
+  .network-photo { min-height:360px; }
+  .packing-image { min-height:340px; height:340px; }
+  .map { height:290px; }
 }
