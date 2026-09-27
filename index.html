@@ -7,6 +7,114 @@
 <link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Manrope:wght@600;700;800&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="styles.css">
+<style>
+/* =========================================================
+   08 / PACKAGING & DOCUMENTATION — project-specific visual layer
+   ========================================================= */
+.packaging-showcase {
+  display: grid;
+  grid-template-columns: .78fr 1.22fr;
+  gap: 70px;
+  align-items: start;
+}
+.packaging-intro { position: sticky; top: 110px; }
+.packaging-intro h2 {
+  font: 700 clamp(36px,4.2vw,60px)/1.03 Manrope, sans-serif;
+  letter-spacing: -.035em;
+  margin: 0;
+}
+.packaging-intro h2 span { color: #788389; }
+.packaging-intro > p:not(.kicker) {
+  max-width: 520px;
+  color: var(--muted);
+  font-size: 15px;
+  line-height: 1.65;
+  margin: 25px 0 0;
+}
+.packaging-checks {
+  display: grid;
+  gap: 0;
+  margin-top: 30px;
+  border-top: 1px solid var(--line);
+}
+.packaging-checks div {
+  display: flex;
+  justify-content: space-between;
+  gap: 20px;
+  padding: 13px 0;
+  border-bottom: 1px solid var(--line);
+  font-size: 12px;
+}
+.packaging-checks span { color: #647075; }
+.packaging-checks b { font-size: 9px; letter-spacing: .08em; color: #788389; }
+.packaging-visuals {
+  display: grid;
+  grid-template-columns: 1.15fr .85fr;
+  gap: 12px;
+}
+.packaging-card {
+  position: relative;
+  overflow: hidden;
+  margin: 0;
+  min-height: 245px;
+  background: #dfe4e2;
+  border: 1px solid #d2d9d7;
+}
+.packaging-card.large { grid-row: span 2; min-height: 515px; }
+.packaging-card img {
+  width: 100%;
+  height: 100%;
+  min-height: inherit;
+  display: block;
+  object-fit: cover;
+  object-position: center;
+  transition: transform .5s ease, filter .5s ease;
+}
+.packaging-card.large img { object-position: center; }
+.packaging-card.cad img { object-fit: contain; background: #f5f7f8; padding: 18px; }
+.packaging-card:hover img { transform: scale(1.035); filter: saturate(.92); }
+.packaging-card figcaption {
+  position: absolute;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  padding: 38px 18px 16px;
+  color: #fff;
+  background: linear-gradient(transparent, rgba(8,12,13,.82));
+  font-size: 11px;
+  line-height: 1.4;
+}
+.packaging-card figcaption b {
+  display: block;
+  margin-bottom: 3px;
+  font: 700 13px Manrope, sans-serif;
+}
+.packaging-note {
+  display: grid;
+  grid-template-columns: repeat(3,1fr);
+  gap: 1px;
+  margin-top: 55px;
+  background: var(--line);
+  border: 1px solid var(--line);
+}
+.packaging-note div { background: #fff; padding: 24px; }
+.packaging-note b {
+  display: block;
+  margin-bottom: 8px;
+  font: 700 15px Manrope, sans-serif;
+}
+.packaging-note span { font-size: 11px; color: var(--muted); line-height: 1.5; }
+@media (max-width: 950px) {
+  .packaging-showcase { grid-template-columns: 1fr; }
+  .packaging-intro { position: static; }
+}
+@media (max-width: 620px) {
+  .packaging-visuals { grid-template-columns: 1fr; }
+  .packaging-card.large { grid-row: auto; min-height: 360px; }
+  .packaging-card { min-height: 270px; }
+  .packaging-note { grid-template-columns: 1fr; }
+}
+</style>
 </head>
 <body>
 <div class="progress"></div>
@@ -22,7 +130,47 @@
 <section class="network"><div class="network-photo"></div><div class="network-copy"><p class="kicker">05 / MANUFACTURING NETWORK</p><h2>The right factory.<br><span>The right route.</span></h2><p>For every project, we research the Turkish manufacturing market and identify suitable partners based on monthly capacity, equipment, technical capability, quality infrastructure, location and delivery requirements.</p><ol><li><b>Capacity & equipment</b><span>Can the factory realistically absorb the scope?</span></li><li><b>Technical fit</b><span>Does its capability match the project?</span></li><li><b>Quality infrastructure</b><span>Certifications, QC and inspection readiness.</span></li><li><b>Schedule & logistics</b><span>Can it meet the route and delivery plan?</span></li></ol></div></section>
 <section class="confidential"><div class="nda"><span>NDA</span><small>PROJECT PROTECTION</small></div><div><p class="kicker">06 / CONFIDENTIALITY</p><h2>Confidential<br><span>from day one.</span></h2><p>Projects can be structured under an NDA before execution to protect technical information, commercial data and the interests of both clients and manufacturing partners.</p></div></section>
 <section id="logistics" class="logistics"><div class="logistics-grid"><div class="logistics-copy"><p class="kicker light">07 / GLOBAL LOGISTICS</p><h2>From Türkiye<br><span>to your site.</span></h2><p>Packaging, marking, packing lists, shipment coordination and destination-specific delivery arrangements are managed as part of the project.</p><div class="logistics-list"><div>EUROPE</div><div>AFRICA</div><div>AMERICAS</div></div></div><div class="map"></div></div></section>
-<section class="pack section"><div class="pack-grid"><div class="pack-copy"><p class="kicker">08 / PACKAGING & DOCUMENTATION</p><h2>Production doesn't end<br><span>at the factory gate.</span></h2><p>High-standard packaging and customer-specific documentation are part of the delivery process.</p><div class="checks"><span>✓ Protective packing</span><span>✓ Identification & marking</span><span>✓ Customer packing list</span><span>✓ Shipment records on request</span></div></div><div class="packing-image"></div></div></section>
+<section class="pack section" id="packaging">
+  <div class="packaging-showcase">
+    <div class="packaging-intro">
+      <p class="kicker">08 / PACKAGING &amp; DOCUMENTATION</p>
+      <h2>Packaging is part of<br><span>the engineering.</span></h2>
+      <p>For industrial components, the job is not finished when fabrication ends. Packing is planned around the component geometry, coating condition, lifting points, transport route and the customer's receiving requirements.</p>
+      <div class="packaging-checks">
+        <div><span>Protection of finished surfaces</span><b>01</b></div>
+        <div><span>Component identification &amp; marking</span><b>02</b></div>
+        <div><span>Customer-specific packing lists</span><b>03</b></div>
+        <div><span>Loading &amp; securing records</span><b>04</b></div>
+        <div><span>Shipment documentation on request</span><b>05</b></div>
+      </div>
+    </div>
+    <div class="packaging-visuals">
+      <figure class="packaging-card large">
+        <img src="images/packing1.jpeg" alt="Fabricated industrial components protected and organized on transport racks">
+        <figcaption><b>Protected &amp; identified</b>Fabricated components organized for controlled handling and shipment.</figcaption>
+      </figure>
+      <figure class="packaging-card cad">
+        <img src="images/3d-packing-flat.jpeg" alt="3D packaging and transport concept drawing">
+        <figcaption><b>Packing concept</b>Transport and packing can be considered during the engineering stage.</figcaption>
+      </figure>
+      <figure class="packaging-card cad">
+        <img src="images/3d-packing.jpeg" alt="3D model of custom industrial packing arrangement">
+        <figcaption><b>Custom packing design</b>Geometry-driven support and protection for industrial components.</figcaption>
+      </figure>
+    </div>
+  </div>
+  <div class="packaging-note">
+    <div><b>01 / PACK</b><span>Components are protected, separated and prepared for handling without compromising the finished product.</span></div>
+    <div><b>02 / DOCUMENT</b><span>Marking, identification and packing lists are prepared according to the agreed customer requirements.</span></div>
+    <div><b>03 / SHIP</b><span>Loading, securing and destination arrangements are coordinated as part of the complete delivery process.</span></div>
+  </div>
+  <div style="margin-top:12px;display:grid;grid-template-columns:1fr;">
+    <figure class="packaging-card" style="min-height:420px;margin:0;">
+      <img src="images/packing2.jpeg" alt="Industrial steel components loaded and secured for road transport" style="object-position:center 55%;">
+      <figcaption><b>Ready for the route</b>Industrial components loaded and secured for controlled road transport and final delivery.</figcaption>
+    </figure>
+  </div>
+</section>
 <section class="industries section"><div class="section-head"><div><p class="kicker">09 / INDUSTRIES</p><h2>Built for demanding<br><span>industrial environments.</span></h2></div></div><div class="industry-grid"><article><b>01</b><h3>Cement &amp; Building Materials</h3><p>Process equipment, mechanical components, steelwork and project-based manufacturing support.</p></article><article><b>02</b><h3>Mining &amp; Minerals</h3><p>Heavy-duty components, fabrication, replacement parts and equipment for demanding operations.</p></article><article><b>03</b><h3>Steel &amp; Metal</h3><p>Steel structures, fabricated components and custom industrial equipment.</p></article><article><b>04</b><h3>Energy &amp; Power</h3><p>Industrial equipment, structures and project supply for energy-related applications.</p></article><article><b>05</b><h3>Bulk Material Handling</h3><p>Conveyors, reclaimers, stackers, structures and mechanical handling equipment.</p></article><article><b>06</b><h3>Industrial Plants &amp; Process Equipment</h3><p>Custom components, assemblies and equipment for project-based industrial applications.</p></article></div></section>
 <section class="closing"><p class="kicker">10 / OUR PROMISE</p><h2>European expectations.<br><span>Turkish manufacturing capability.</span></h2><p>One coordinated team across engineering, manufacturing, quality, project control and international delivery.</p></section>
 <section id="contact" class="contact"><div><p class="kicker">START A PROJECT</p><h2>Have an industrial requirement?</h2><p>Send us your drawings, scope or project requirement. We will review the opportunity and discuss the right manufacturing and project-control route.</p></div><a class="btn dark" href="mailto:info@kolerendustri.com">Discuss a Project ↗</a></section>
