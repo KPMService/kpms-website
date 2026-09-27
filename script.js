@@ -4,128 +4,38 @@
    /index.html     → English
    /tr/index.html  → Turkish
    There is NO automatic translation in this file.
+
+   Not: Bu dosya artık industrial-theme.css'i enjekte etmiyor —
+   o dosya styles.css ile çakışıp renkleri bozuyordu. Paket ve
+   lojistik bölümlerinin stili de artık doğrudan styles.css'te,
+   burada DOM'u zorlayan ekstra kod yok.
    ========================================================= */
 
 document.addEventListener('DOMContentLoaded', () => {
-    /* Load the shared cinematic industrial visual theme. */
-    if (!document.querySelector('link[data-koler-theme]')) {
-        const theme = document.createElement('link');
-        theme.rel = 'stylesheet';
-        theme.href = window.location.pathname.includes('/tr/')
-            ? '../industrial-theme.css'
-            : 'industrial-theme.css';
-        theme.dataset.kolerTheme = 'true';
-        document.head.appendChild(theme);
-    }
 
-    /* Fixed local image set — no external image URLs. */
-    const imageStyle = document.createElement('style');
-    imageStyle.dataset.kolerImages = 'true';
-    imageStyle.textContent = `
-        .photo.p1 { background-image: url("${window.location.pathname.includes('/tr/') ? '../' : ''}images/01-engineering-support.jpg") !important; }
-        .photo.p2 { background-image: url("${window.location.pathname.includes('/tr/') ? '../' : ''}images/02-manufacturer-selection.jpg") !important; }
-        .photo.p3 { background-image: url("${window.location.pathname.includes('/tr/') ? '../' : ''}images/03-production-control.jpg") !important; }
-        .photo.p4 { background-image: url("${window.location.pathname.includes('/tr/') ? '../' : ''}images/04-quality-shipment.jpg") !important; }
-        .network-photo, .map { background-image: url("${window.location.pathname.includes('/tr/') ? '../' : ''}images/05-global-world-map.jpg") !important; }
-        .packing-image { background-image: url("${window.location.pathname.includes('/tr/') ? '../' : ''}images/06-container-ship.jpg") !important; }
+    const isTurkish = window.location.pathname.includes('/tr/');
 
-        /* Industries: keep cards clean until dedicated sector photos are added. */
-        .industry-grid article {
-            background-image: none !important;
-            background-color: #1a2225 !important;
-        }
-
-        /* Logistics destination labels: readable on the light section. */
-        .logistics-list div {
-            color: #101517 !important;
-            background: #edf1ef !important;
-            border-color: #cbd3d1 !important;
-        }
-
-        /* Packaging heading: keep the first phrase together. */
-        .pack h2 .pack-line {
-            white-space: nowrap;
-            color: inherit;
-        }
-
-        /* Packaging image stays below the text. */
-        .pack-grid {
-            display: flex !important;
-            flex-direction: column !important;
-            align-items: stretch !important;
-        }
-        .pack-copy { width: 100% !important; }
-        .packing-image { order: 2; }
-
-        @media (max-width: 640px) {
-            .pack h2 .pack-line { white-space: normal; }
-        }
-    `;
-    document.head.appendChild(imageStyle);
-
-    /* Keep the packaging headline as two intentional lines. */
-    const packHeading = document.querySelector('.pack h2');
-    if (packHeading) {
-        packHeading.innerHTML = '<span class="pack-line">Production doesn\'t end</span><br><span>at the factory gate.</span>';
-    }
-
+    /* Language switcher — tek yerden üretiliyor, iki dilde de
+       aynı class isimlerini (styles.css ile eşleşen) kullanıyor. */
     const header = document.querySelector('.site-nav');
-
-    /* Language switcher: always on the far right. */
-    if (header && !document.querySelector('.language-switcher')) {
+    if (header && !header.querySelector('.language-switcher')) {
         const switcher = document.createElement('div');
         switcher.className = 'language-switcher';
 
-        const isTurkish = window.location.pathname.includes('/tr/');
         const englishPath = isTurkish ? '../index.html' : 'index.html';
         const turkishPath = isTurkish ? './' : 'tr/index.html';
 
         switcher.innerHTML = `
-            <a href="${englishPath}" class="language-option ${!isTurkish ? 'active' : ''}" aria-label="English">🇬🇧 <span>EN</span></a>
-            <span class="language-divider">|</span>
-            <a href="${turkishPath}" class="language-option ${isTurkish ? 'active' : ''}" aria-label="Türkçe">🇹🇷 <span>TR</span></a>
+            <a href="${englishPath}" class="lang-btn ${!isTurkish ? 'active' : ''}">EN</a>
+            <a href="${turkishPath}" class="lang-btn ${isTurkish ? 'active' : ''}">TR</a>
         `;
 
-        switcher.style.cssText = `
-            order: 3;
-            margin-left: 24px;
-            margin-right: 0;
-            display: flex;
-            align-items: center;
-            gap: 4px;
-            flex-shrink: 0;
-            z-index: 95;
-        `;
-
-        switcher.querySelectorAll('.language-option').forEach(option => {
-            option.style.cssText = `
-                display: inline-flex;
-                align-items: center;
-                gap: 5px;
-                padding: 7px 9px;
-                border: 1px solid transparent;
-                border-radius: 999px;
-                font-size: 11px;
-                font-weight: 800;
-                letter-spacing: .06em;
-                transition: all .2s ease;
-            `;
-        });
-
-        const active = switcher.querySelector('.language-option.active');
-        if (active) {
-            active.style.background = '#c9ff3d';
-            active.style.color = '#080b0c';
-            active.style.borderColor = '#c9ff3d';
-        }
-
-        switcher.querySelector('.language-divider').style.color = '#687579';
-
-        const nav = header.querySelector('nav');
         const menu = header.querySelector('.menu');
-        if (nav) nav.style.order = '2';
-        if (menu) menu.style.order = '4';
-        header.appendChild(switcher);
+        if (menu) {
+            header.insertBefore(switcher, menu);
+        } else {
+            header.appendChild(switcher);
+        }
     }
 
     /* Scroll progress */
@@ -139,11 +49,10 @@ document.addEventListener('DOMContentLoaded', () => {
     window.addEventListener('scroll', updateProgress, { passive: true });
     updateProgress();
 
-    /* Scroll reveal */
+    /* Tek, sakin giriş hareketi — kart bazlı gecikmeli "cascade" yok. */
     const revealItems = document.querySelectorAll(
-        '.journey article, .risk-grid > div, .quality-chain > div, .quality-cards > div, .industry-grid article, .dashboard, .reports, .network-copy'
+        '.journey, .risk-grid, .quality-cards, .industry-grid, .dashboard, .reports, .network-copy'
     );
-
     if ('IntersectionObserver' in window && revealItems.length) {
         const observer = new IntersectionObserver((entries, obs) => {
             entries.forEach(entry => {
@@ -158,7 +67,7 @@ document.addEventListener('DOMContentLoaded', () => {
         revealItems.forEach(item => item.classList.add('visible'));
     }
 
-    /* Experience counter */
+    /* Experience counter — gerçek rakam olduğu için tek, anlamlı hareket */
     const counter = document.querySelector('.big-number strong');
     if (counter && 'IntersectionObserver' in window) {
         const target = parseInt(counter.textContent.replace(/[^0-9]/g, ''), 10);
@@ -169,7 +78,7 @@ document.addEventListener('DOMContentLoaded', () => {
                     let startTime = null;
                     const animate = time => {
                         if (!startTime) startTime = time;
-                        const p = Math.min((time - startTime) / 1000, 1);
+                        const p = Math.min((time - startTime) / 900, 1);
                         const eased = 1 - Math.pow(1 - p, 3);
                         counter.textContent = `${Math.floor(target * eased)}+`;
                         if (p < 1) requestAnimationFrame(animate);
