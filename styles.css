@@ -44,9 +44,8 @@ button { font-family: inherit; }
    ========================================================= */
 .progress { position: fixed; z-index: 200; top: 0; left: 0; height: 3px; width: 0; background: var(--lime); }
 .site-nav { height: 78px; position: sticky; top: 0; z-index: 190; display: flex; align-items: center; padding: 0 5vw; background: rgba(238, 241, 239, .94); border-bottom: 1px solid var(--line); backdrop-filter: blur(18px); }
-.logo { display: flex; align-items: center; gap: 12px; font: 800 29px Manrope, sans-serif; letter-spacing: -.055em; }
-.logo > span { width: 46px; height: 46px; display: grid; place-items: center; background: var(--ink); color: var(--lime); border-radius: 7px; font: 700 28px Manrope, sans-serif; }
-.logo strong { font: 800 29px Manrope, sans-serif; letter-spacing: -.055em; color: var(--ink); }
+.logo { display:flex; align-items:center; }
+.logo img { width: 230px; height: auto; display:block; }
 .site-nav nav { display: flex; gap: 26px; align-items: center; margin-left: auto; font-size: 13px; color: #465055; }
 .site-nav nav a:hover { color: var(--ink); }
 .nav-btn { padding: 11px 15px; background: var(--ink); color: #fff !important; border-radius: 3px; }
@@ -318,9 +317,7 @@ button { font-family: inherit; }
 @media (max-width: 640px) {
   .site-nav { height: 68px; padding: 0 5vw; }
   .site-nav nav.open { display: flex !important; position: absolute; top: 68px; left: 0; right: 0; padding: 20px; background: rgba(238,241,239,.98); flex-direction: column; align-items: flex-start; border-bottom: 1px solid var(--line); z-index: 189; }
-  .logo { gap: 10px; font-size: 25px; }
-  .logo > span { width: 40px; height: 40px; border-radius: 6px; font-size: 24px; }
-  .logo strong { font-size: 25px; }
+  .logo img { width: 190px; }
   .hero { padding: 90px 6vw 150px; min-height: 760px; }
   .hero h1 { font-size: 44px; }
   .hero-copy { font-size: 16px; }
