@@ -112,10 +112,11 @@ button { font-family: inherit; }
 .journey h3 { font: 700 23px Manrope; margin: 0 0 10px; color: #fff; }
 .journey p { font-size: 13.5px; color: #aeb8bc; line-height: 1.55; }
 .photo { height: 220px; margin: 18px -20px 25px; position: relative; overflow: hidden; background-size: cover; background-position: center; filter: saturate(.85) contrast(1.02); border-bottom: 2px solid var(--lime); }
-.photo.p1 { background-image: url("images/01-engineering-support.jpg"); }
-.photo.p2 { background-image: url("images/02-manufacturer-selection.jpg"); }
-.photo.p3 { background-image: url("images/03-production-control.jpg"); }
-.photo.p4 { background-image: url("images/04-quality-shipment.jpg"); }
+.photo.p1 { background-image: url("images/project-management.jpeg"); }
+.photo.p2 { background-image: url("images/engineering-review.jpg"); }
+.photo.p3 { background-image: url("images/manufacturer-selection.jpg"); }
+.photo.p4 { background-image: url("images/quality.jpg"); }
+.photo.p5 { background-image: url("images/shipment.jpg"); }
 .photo:after { content: ""; position: absolute; inset: 0; background: linear-gradient(180deg, transparent 48%, rgba(0,0,0,.25)); }
 
 /* =========================================================
