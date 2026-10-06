@@ -105,7 +105,7 @@ button { font-family: inherit; }
 #model .section-head > p { color: #aeb8bc; }
 #model h2 { color: #fff; }
 #model h2 span { color: #8f9a9e; }
-.journey { display: grid; grid-template-columns: repeat(4, 1fr); gap: 12px; }
+.journey { display: grid; grid-template-columns: repeat(5, 1fr); gap: 10px; }
 .journey article { background: #1a2225; border: 1px solid #303a3e; border-radius: 4px; padding: 20px; min-height: 500px; position: relative; overflow: hidden; transition: transform .3s ease; }
 .journey article:hover { transform: translateY(-6px); }
 .journey article > span { font: 700 11px Manrope; color: var(--lime); }
