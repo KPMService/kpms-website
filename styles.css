@@ -145,8 +145,8 @@ button { font-family: inherit; }
 .risk h2 span { color: #8f999d; }
 .risk-grid { display: grid; grid-template-columns: repeat(4,1fr); gap: 1px; background: #303a3e; border: 1px solid #303a3e; border-radius: 4px; overflow: hidden; }
 .risk-grid > div { padding: 30px; min-height: 280px; background: #161c1e; }
-.risk-grid b { font-size: 10px; letter-spacing: .08em; color: var(--weld); }
-.risk-grid h3 { font: 700 22px Manrope; margin: 45px 0 12px; color: #fff; }
+.risk-grid b { display: none; }
+.risk-grid h3 { font: 700 22px Manrope; margin: 0 0 12px; color: #fff; }
 .risk-grid p { font-size: 13.5px; color: #aeb8bc; line-height: 1.55; }
 
 .control { background: #101415; color: #fff; padding: 125px 9vw; }
