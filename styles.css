@@ -335,11 +335,23 @@ button { font-family: inherit; }
   .site-nav { height: 68px; padding: 0 5vw; }
   .site-nav nav.open { display: flex !important; position: absolute; top: 68px; left: 0; right: 0; padding: 20px; background: rgba(238,241,239,.98); flex-direction: column; align-items: flex-start; border-bottom: 1px solid var(--line); z-index: 189; }
   .logo img { width: 190px; }
-  .hero { padding: 90px 6vw 150px; min-height: 760px; }
+  .hero {
+    padding: 90px 6vw 210px;
+    min-height: 920px;
+    align-items: flex-start;
+  }
   .hero h1 { font-size: 44px; }
   .hero-copy { font-size: 16px; }
-  .hero-bottom { left: 6vw; right: 6vw; }
+  .hero-bottom {
+    left: 6vw;
+    right: 6vw;
+    bottom: 24px;
+    grid-template-columns: repeat(2, 1fr);
+  }
+  .hero-bottom div { padding: 14px 0; }
+  .hero-bottom div + div { padding-left: 16px; }
   .hero-bottom b { font-size: 34px; }
+  .hero-bottom small { display: block; max-width: 130px; line-height: 1.45; }
   .section,.experience,.control,.confidential,.logistics,.pack,.closing,.contact { padding: 80px 6vw; }
   .statement { padding: 80px 6vw; gap: 40px; }
   .section-head { display: block; }
